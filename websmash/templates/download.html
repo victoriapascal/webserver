@@ -1,0 +1,146 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h3>Download plantiSMASH standalone</h3>
+<div class="well well-small">
+  Stand-alone versions of plantiSMASH 1.0.beta are available through Bitbucket.
+</div>
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <!--    <li><a href="#windows" data-toggle="tab">Windows</a></li>-->
+    <!--<li><a href="#linux" data-toggle="tab">Linux</a></li>-->
+    <!--<li><a href="#osx" data-toggle="tab">Mac OSX</a></li>-->
+    <li><a href="#source" data-toggle="tab">Source</a></li>
+    <li><a href="#extras" data-toggle="tab">Extras</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active">
+      <p>The current standalone release is plantiSMASH <strong>1.0.beta</strong> (<em>October 10th, 2016</em>)</p>
+      <p>Please select the tab under "Source" for the guidance on manual installation through git.
+        Under "extras", you can find some scripts that can aid in using plantiSMASH</p>
+    </div>
+<!--    <div class="tab-pane" id="windows">
+      <h4>Windows XP/Vista/7 downloads</h4>
+      <p>
+      <a href="https://bitbucket.org/antismash/antismash2/downloads/antismash_2.0.2_win32.exe">
+        antiSMASH v2.0.2 installer package (32-bits)
+      </a>
+      </p>
+      <p>
+      <a href="https://bitbucket.org/antismash/antismash2/downloads/antismash_2.0.2_win64.exe">
+        antiSMASH v2.0.2 installer package (64-bits)
+      </a>
+      </p>
+      <p>
+      To be able to run antiSMASH on Windows, you will also need to install the following packages:
+      <ul>
+        <li><a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=9b2da534-3e03-4391-8a4d-074b9f2bc1bf&displaylang=en">Microsoft Visual C++ 2008 Redistributable Package</a></li>
+        <li><a href="http://www.java.com/en/download/index.jsp">Java</a></li>
+        <li><a href="http://python.org/download/">Python</a></li>
+      </ul>
+      </p>
+      <p>
+        The
+        <a href="https://bitbucket.org/antismash/antismash1/downloads/antiSMASH-1.2.2.win32.exe">legacy antiSMASH v1.2.2 installer</a>
+        is also still available.
+      </p>
+    </div>-->
+    <!--div class="tab-pane" id="linux">
+      <h4>Debian 8 "jessie"</h4>
+      <p><a href="https://bitbucket.org/antismash/antismash/downloads/install_deb.sh">
+        antiSMASH v3.0.5 installer script</a>
+      </p>
+      <h4>Docker container</h4>
+      <p>There are two Docker containers available for antiSMASH 3.0.5:
+      <code>antismash/standalone</code>
+      (<a href="http://phdops.kblin.org/2015-running-antismash-standalone-from-docker.html">See instructions</a>) and
+      <code>antismash/standalone-lite</code>
+      (<a href="http://phdops.kblin.org/2015-antismash-standalone-lite-docker.html">Bring your own PFAM/ClusterBlast
+        databases, see instructions</a>).
+      </p>
+
+      <h4>Old versions</h4>
+      <p>
+      Legacy Ubuntu installers for
+      <a href="https://bitbucket.org/antismash/antismash1/downloads/install_ubuntu.sh">antiSMASH v1.2.2</a>
+      and
+      <a href="https://bitbucket.org/antismash/antismash2/downloads/install_ubuntu.sh">antismash v2.1.1</a>
+      are also still available, but not actively supported anymore.
+      </p>
+
+
+    </div-->
+<!--    <div class="tab-pane" id="osx">
+      <h4>Max OS X, for versions 10.6 (Snow Leopard) and higher</h4>
+      <p><a href="https://bitbucket.org/antismash/antismash2/downloads/antiSMASH2.0.2_macosx.zip">
+        antiSMASH v2.0.2 installer package</a>
+      </p>
+      <p>To be able to run antiSMASH on Mac OS X, you will also need to install Cairo and libxml2.
+      </p>
+      <p>
+      These can be acquired by installing <a href="http://www.macports.org/install.php">MacPorts</a>:
+      <ul>
+        <li>Then, to get Cairo, type 'sudo port install cairo' in the terminal.</li>
+        <li>To get libxml2, type 'sudo port install libxml2' in the terminal.</li>
+      </ul>
+      </p>
+      <p>
+        The
+        <a href="https://bitbucket.org/antismash/antismash1/downloads/antiSMASH-1.2.2.macosx.dmg">legacy antiSMASH v1.2.2 installer</a>
+        is also still available.
+      </p>
+    </div>-->
+    <div class="tab-pane" id="source">
+      <h4>Install from source</h4>
+      <p>
+        First of all, clone the plantiSMASH python source from our Bitbucket repo:<br />
+        <code>git clone https://bitbucket.org/satriaphd/plantismash-release.git</code>
+      </p>
+      <p>
+        Then, make sure you have the following plantiSMASH dependencies installed:
+        <ul>
+            <li><a href="https://ccb.jhu.edu/software/glimmer/">glimmer</a> (version 3.02 tested)</li>
+            <li><a href="https://ccb.jhu.edu/software/glimmerhmm/">GlimmerHMM</a> (version 3.0.4 tested)</li>
+            <li><a href="http://hmmer.janelia.org/download.html">hmmer2</a> (version 2.3.2 tested, append a 2 to all hmmer2 executables to avoid conflict with hmmer3 executable names, like hmmalign -&gt; hmmalign2)</li>
+            <li><a href="http://hmmer.janelia.org/download.html">hmmer3</a> (version 3.0 and 3.1b2 tested)</li>
+            <li><a href="http://www.microbesonline.org/fasttree/#Install">fasttree</a> (version 2.1.7 tested)</li>
+            <li><a href="https://github.com/bbuchfink/diamond">diamond</a> (&gt; 0.7.9 required, version 0.7.10 tested<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>)</li>
+            <li><a href="http://www.drive5.com/muscle/downloads.htm">muscle</a> (version 3.8.31 tested)</li>
+            <li><a href="http://prodigal.ornl.gov/">prodigal</a> (version 2.6.1 tested)</li>
+            <li><a href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/">NCBI blast+</a> (version 2.2.31 tested)</li>
+            <li><a href="http://weizhongli-lab.org/cd-hit/download.php">CD-HIT</a> (version 4.6.6 tested)</li>
+            <li><a href="http://tukaani.org/xz/">xz</a> development headers (version 5.1.1 tested)</li>
+            <li><a href="http://xmlsoft.org">xml</a> development headers (version 2.9.1 tested)</li>
+            <li>python (version 2.7 tested, anything &gt;= python 2.6 should work)</li>
+            <li>python-virtualenv (not needed, but highly recommended)</li>
+        </ul>
+        <p>Then, create a python virtualenv for installing the plantiSMASH python dependencies. This is not required, but highly recommended.</p>
+        <pre><code class="bash hljs">virtualenv as3<span class="hljs-built_in">source</span> as3/bin/activate</code></pre>
+        <p>All the python dependencies are listed in <code>requirements.txt</code>, you can grab them all and install them with a simple command:</p>
+        <pre><code class="bash hljs">pip install -r requirements.txt</code></pre>
+        <p>Last but not least, run <code>download_databases.py</code> to grab and prepare the databases:</p>
+        <pre><code class="bash hljs">python download_databases.py</code></pre>
+      </p>
+    </div>
+    <div class="tab-pane" id="extras">
+      <h4>Scripts that can aid in using antiSMASH:</h4>
+      <dl class="dl-horizontal">
+        <dt><a href="https://bitbucket.org/antismash/antismash2/downloads/antiSMASH2_pHMM_seed_alignments.zip">pHMM seed alignments</a>
+        <dd>Seed alignments used for building pHMMs used in secondary metabolite cluster finding</dd>
+        <dt><a href="https://bitbucket.org/antismash/antismash2/downloads/analysis_template.zip">analysis plug-in</a></dt>
+        <dd>Template code for creating your own antismash 2.0 analysis plug-ins</dd>
+        <dt><a href="https://bitbucket.org/antismash/antismash2/downloads/output_template.zip">output plug-in</a></dt>
+        <dd>Template code for creating your own antismash 2.0 output plug-ins</dd>
+        <dt><a href="https://bitbucket.org/antismash/antismash1/downloads/format_embl.zip">format_embl</a></dt>
+        <dd>Script for preparing an EMBL file from a TXT file with gene annotations and a DNA sequence in FASTA format</dd>
+        <dt><a href="https://bitbucket.org/antismash/antismash1/downloads/batch_antismash.zip">batch_antismash</a></dt>
+        <dd>Script for batch-processing multiple files in antiSMASH version 1.x</dd>
+      </dl>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block ready_function %}
+  if (window.location.hash.length > 0) {
+    $('.nav-tabs a[href=' + window.location.hash + ']').tab('show');
+  }
+{% endblock %}

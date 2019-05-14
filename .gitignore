@@ -1,0 +1,8 @@
+*.pyc
+*.swp
+.coverage
+cover/*
+results/*
+jobs.db
+.drone.yml
+.drone.sec

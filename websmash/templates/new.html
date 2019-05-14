@@ -1,0 +1,181 @@
+{% extends 'layout.html' %}
+{% block error_notices %}
+&nbsp;
+{% if error %}
+<div class="alert alert-error">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Error:</strong> {{error}}
+</div>
+{% endif %}
+{% endblock %}
+{% block body %}
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#nucl" data-toggle="tab">Nucleotide input</a></li>
+  <li><a href="./precalc">Precalculated Results</a></li>
+  <li><a href="#job" data-toggle="tab">Results for existing job</a></li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="nucl">
+    <div>Search plant genome sequence for secondary metabolite biosynthesis gene clusters:</div>
+    <div>
+      <button class="btn btn-inverse" id="btn-sample-input">Load sample input</button>
+      <button class="btn btn-inverse" id="btn-sample-output">Open example output</button>
+    </div>
+    <div class="spacer"></div>
+    <div>
+      <form class="form" method="POST" id="nucl-form" enctype="multipart/form-data">
+        <fieldset class="as-form">
+          <div class="form-group row">
+             <div class="col-md-5">
+              <input class="form-control" type="email" name="email" id="email" value="" placeholder="your.email@example.com">
+            </div>
+            <label class="col-md-4">Email address (optional)</label>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-5">
+              <input class="form-control" type="file" name="seq" id="seq">
+            </div>
+            <label class="col-md-6">Load a file in GenBank / EMBL format (recommended) or in FASTA format</label>
+          </div>
+          <div class="form-group row" style="display: none;" id="gff-row">
+            <div class="col-md-5">
+              <input class="form-control" type="file" name="gff" id="gff">
+            </div>
+            <label class="col-md-6">Annotation file in GFF3 format (optional)</label>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-5">
+              <input class="form-control" type="text" name="ncbi" id="ncbi" placeholder="NCBI ACC #">
+            </div>
+            <label class="col-md-6">or input NCBI accession number of desired file</label>
+          </div>
+        </fieldset>
+        <fieldset class="as-form">
+          <div style="margin-top: 0.5em;">
+            <strong>Additional analysis:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right" title="Every options selected might increase the analysis runtime"><span class="glyphicon glyphicon-question-sign"></span></a>
+          </div>
+          <div id="clusterblast-control" data-toggle="collapse" data-target=".clusterblast" style="margin-top: 0.5em;">
+            <span class="glyphicon glyphicon-plus" id="clusterblast-button"></span>
+            Gene cluster comparative analysis (ClusterBlast):
+          </div>
+          <div class="form-group collapse clusterblast row">
+            <div class="col-md-5">
+              <label for="clusterblast">
+                <input type="checkbox" name="clusterblast" id="clusterblast">
+                Compare to plantiSMASH predicted clusters</label>
+            </div>
+            <div class="col-md-6">
+              <label for="knownclusterblast">
+                <input type="checkbox" name="knownclusterblast" id="knownclusterblast">
+                Compare to registered known clusters from MIBiG Database</label>
+            </div>
+          </div>
+          <div id="coexpress-control" data-toggle="collapse" data-target=".coexpress" style="margin-top: 0.5em;">
+            <span class="glyphicon glyphicon-plus" id="coexpress-button"></span>
+            Gene expression analysis (CoExpress):
+          </div>
+          <div class="form-group collapse coexpress row">
+            <div class="col-md-5">
+              <input class="form-control" type="file" name="coexpress_file" id="coexpress_file">
+            </div>
+            <label class="col-md-6">Load a <a href="https://www.ncbi.nlm.nih.gov/geo/">Gene Expression Omnibus (GEO)</a> SOFT file or a <a href="./help.html#coexpress">properly formatted</a> CSV file</label>
+          </div>
+        </fieldset>
+        <fieldset class="as-form">
+          <div style="margin-top: 0.5em;">
+            <strong>Advanced options:</strong>
+          </div>
+          <div id="advanced-control" data-toggle="collapse" data-target=".advanced" style="margin-top: 0.5em;">
+            <span class="glyphicon glyphicon-plus" id="advanced-button"></span>
+            Show advanced options
+          </div>
+          <div class="collapse advanced">
+            <br>
+            <div class="form-group row">
+              <div class="col-md-3">CD-HIT Cutoff</div>
+              <div class="col-md-8">: <input type="text" name="cdh_cutoff" id="cdh_cutoff" size="2" value="0.5" style="text-align: right;"> (default: 0.5)</div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-3">Minimum unique domains</div>
+              <div class="col-md-8">: <input type="text" name="min_domain" id="min_domain" size="2" value="2" style="text-align: right;"> (default: 2)</div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-3">MAD Cutoff (CoExpress)</div>
+              <div class="col-md-8">: <input type="text" name="coexpress_mad" id="coexpress_mad" size="2" value="" style="text-align: right;"> (default: not set; only filter out genes with 0 MAD)</div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="spacer"></div>
+        <div class="well">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="tab-pane" id="job">
+    <div>Display results for an existing job</div>
+    <form class="form-inline">
+      <label for="jobid">Job ID:
+        <input type="text" name="jobid" id="jobid" class="input-xlarge" placeholder="aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee">
+      </label>
+      <button id="display-job" class="btn btn-primary">Display</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+{% block ready_function %}
+    // Make sure that only NCBI accession# or uploadable file is present.
+    $('#seq').change(seq_callback);
+    $('#ncbi').change(clear_upload);
+
+    // Set up button actions
+    $('#btn-sample-input').click(function(){
+        $('#ncbi').val('NC_003076');
+        clear_upload();
+    });
+    $('#btn-sample-output').click(function(){
+        window.open('/precalc/results/Arabidopsis_thaliana/', '_self');
+    });
+
+    $('.clusterblast').on('show.bs.collapse', function(){
+        $('#clusterblast-button').removeClass('glyphicon-plus')
+            .addClass('glyphicon-minus');
+    })
+    .on('hide.bs.collapse', function() {
+        $('#clusterblast-button').removeClass('glyphicon-minus')
+            .addClass('glyphicon-plus');
+    });
+
+    $('.coexpress').on('show.bs.collapse', function(){
+        $('#coexpress-button').removeClass('glyphicon-plus')
+            .addClass('glyphicon-minus');
+    })
+    .on('hide.bs.collapse', function() {
+        $('#coexpress-button').removeClass('glyphicon-minus')
+            .addClass('glyphicon-plus');
+    });
+
+    $('.advanced').on('show.bs.collapse', function(){
+        $('#advanced-button').removeClass('glyphicon-plus')
+            .addClass('glyphicon-minus');
+    })
+    .on('hide.bs.collapse', function() {
+        $('#advanced-button').removeClass('glyphicon-minus')
+            .addClass('glyphicon-plus');
+    });
+
+
+    $('#display-job').click(function(){
+        var jobid = $('#jobid').val();
+        window.open("{{ url_for('display', task_id='') }}" + jobid, "_self");
+        return false;
+    });
+
+    {% if switch_to %}
+    $('.nav-tabs a[href="#{{switch_to}}"]').tab('show');
+    {% endif %}
+
+    $('#nucl-form').submit(verify_nucl_form);
+{% endblock %}
