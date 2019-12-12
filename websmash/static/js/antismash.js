@@ -159,6 +159,19 @@ function is_fasta(file) {
     return res;
 }
 
+function is_gff3(file) {
+    var ext = get_ext(file.toLowerCase());
+    var valid_exts = ['gff', 'gff3', 'gtf'];
+    var res = false;
+    for (var i in valid_exts) {
+        if (ext == valid_exts[i]) {
+            res = true;
+            break;
+        }
+    }
+    return res;
+}
+
 function getFileSize() {
     var input, file;
 
@@ -182,6 +195,7 @@ function getFileSize() {
 function verify_nucl_form() {
     var file = $('#seq').val();
     var ncbi = $('#ncbi').val();
+    var gff = $('#gff').val();
 
     if( (file === '' || file === null) && (ncbi === '' || ncbi === null)){
         alert('No input file provided. Please enter NCBI number or upload your own file');
@@ -190,6 +204,9 @@ function verify_nucl_form() {
 
     if( !(is_annotated(file) || is_fasta(file)) && ncbi === '' ) {
         alert('Please provide EMBL/GenBank or nucleotide FASTA file');
+        return false;
+    } else if ( is_fasta(file) && !is_gff3(gff) ) {
+        alert('Please provide annotation file (GFF3 format)');
         return false;
     }
 

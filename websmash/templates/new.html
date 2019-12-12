@@ -9,6 +9,10 @@
 {% endif %}
 {% endblock %}
 {% block body %}
+<div class="well well-small">
+  Due to the limited server's resource, users can now only upload annotated fasta files (i.e. fasta + gff3).
+  Please first run your assembly on gene finding tools such as <a href="http://bioinf.uni-greifswald.de/augustus/">AUGUSTUS</a> before submitting it into plantiSMASH.
+</div>
 <ul class="nav nav-tabs">
   <li class="active"><a href="#nucl" data-toggle="tab">Nucleotide input</a></li>
   <li><a href="./precalc/precalc/">Precalculated Results</a></li>
@@ -43,7 +47,7 @@
             <div class="col-md-5">
               <input class="form-control" type="file" name="gff" id="gff">
             </div>
-            <label class="col-md-6">Annotation file in GFF3 format (optional)</label>
+            <label class="col-md-6">Annotation file in GFF3 format (mandatory!)</label>
           </div>
           <div class="form-group row">
             <div class="col-md-5">
