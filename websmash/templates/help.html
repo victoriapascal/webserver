@@ -1,20 +1,14 @@
 {% extends 'layout.html' %}
 {% block body %}
-<div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="#news">Help</a>
-    <ul class="nav">
-      <li><a href="#news">News</a></li>
-      <li><a href="#intro">Introduction</a></li>
-      <li><a href="#input">Input</a></li>
-      <li><a href="#output">Output</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#secmettypes">Secondary metabolite types detected</a></li>
-    </ul>
+<div>
+  <div class="well well-small">
+    See our Springer's Protocols book chapter:
+    <br />
+    <a href="https://link.springer.com/protocol/10.1007/978-1-4939-7874-8_15"> 
+    Kautsar, S. A., Duran, H. G. S., & Medema, M. H. (2018). <i>Genomic identification and analysis of specialized metabolite biosynthetic gene clusters in plants using PlantiSMASH.</i> In Plant Chemical Genomics (pp. 173-188). Humana Press, New York, NY.
+    </a>
   </div>
-</div>
-<div class="help-content">
-  <div id="news">
+  <div id="news" style="margin: 1em;">
     <h4>News</h4>
     Version 1.0.beta of plantiSMASH is live now!<br />
     plantiSMASH is an extension of the widely used tool antiSMASH, now optimized for and made to work on plant genomes.
@@ -28,7 +22,7 @@
     </ul>
     Besides these, all the usual great features found in antiSMASH are also available in plantiSMASH.
   </div>
-  <div id="intro">
+  <div id="intro" style="margin: 1em;">
     <h4>Introduction</h4>
     <p>
       Plants around the globe produce a wide variety of specialized metabolites that play key roles in communication and defense.
@@ -46,7 +40,7 @@
       Moreover, spurred by the continuing decrease in costs of plant genome sequencing and assembly, it will soon allow natural product chemists to apply genome mining technologies to the discovery of novel medicinal compounds from a wide range of plant species.
     </p>
   </div>
-  <div id="input">
+  <div id="input" style="margin: 1em;">
     <h4>plantiSMASH input parameters</h4>
     <p>
       The ideal input for plantiSMASH is an annotated nucleotide file in Genbank format or EMBL format.
@@ -69,8 +63,8 @@
       You can supply one or more additional file(s) either in <a href="https://www.ncbi.nlm.nih.gov/geo/info/soft.html">GEO compliant</a> *.soft format or in a simple CSV format (see <a href="#coex">CoExpress CSV file format</a>); plantiSMASH will then generate several powerful visualizations to help you see how genes interacts in terms of expression in a set conditions, both within and between clusters.
     </p>
   </div>
-  <div id="output">
-    <h4>antiSMASH output</h4>
+  <div id="output" style="margin: 1em;">
+    <h4>plantiSMASH output</h4>
     <p>
       The output of the plantiSMASH analysis pipeline is organized in an interactive HTML page with SVG graphics, and different parts of the analysis are displayed in different panels for every gene cluster (see <a href="http://plantismash.secondarymetabolites.org/precalc/results/Arabidopsis_thaliana">example output file on the Arabidopsis thaliana, or other species in our <a href="http://plantismash.secondarymetabolites.org/precalc/results/Arabidopsis_thaliana">precalculated results page</a>).
     </p>
