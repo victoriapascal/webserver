@@ -35,7 +35,9 @@
             <div class="col-md-5">
               <input class="form-control" type="file" name="seq" id="seq">
             </div>
-            <label class="col-md-6">Load a file in GenBank / EMBL format (recommended) or in FASTA format</label>
+            <label class="col-md-6">Load a file in GenBank / EMBL format (recommended) or in FASTA format
+              <a href="#" data-toggle="tooltip" data-placement="right" title="Please limit file size to a maximum of 1GB file. If the fasta/gbk file is too big, separate it e.g. by chromosomes."><span class="glyphicon glyphicon-question-sign"></span></a>
+            </label>
           </div>
           <div class="form-group row" style="display: none;" id="gff-row">
             <div class="col-md-5">
@@ -136,7 +138,7 @@
         clear_upload();
     });
     $('#btn-sample-output').click(function(){
-        window.open('/precalc/results/Arabidopsis_thaliana/', '_self');
+        window.open('/precalc/precalc/Arabidopsis_thaliana/', '_self');
     });
 
     $('.clusterblast').on('show.bs.collapse', function(){
