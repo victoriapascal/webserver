@@ -1,4 +1,4 @@
-plantiSMASH web interface
+gutSMASH web interface
 =========================
 
 [![Build Status](http://github.drone.secondarymetabolites.org/api/badges/antismash/ps-web/status.svg)](http://github.drone.secondarymetabolites.org/antismash/ps-web)
