@@ -2,7 +2,8 @@ from flask import Flask, g
 from flask.ext.mail import Mail
 from werkzeug import SharedDataMiddleware
 from os import path
-from urlparse import urlparse
+#from urlparse import urlparse
+from urllib.parse import urlparse
 from redis import Redis
 from redis.sentinel import Sentinel
 

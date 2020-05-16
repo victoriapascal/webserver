@@ -1,55 +1,34 @@
 {% extends 'layout.html' %}
 {% block body %}
-<h3>How to use plantiSMASH</h3>
+<h3>How to use gutSMASH</h3>
 <div>
   <div class="well well-small">
-    See our Springer's Protocols book chapter:
+    Check our publication for more information:
     <br />
     <a href="https://link.springer.com/protocol/10.1007/978-1-4939-7874-8_15"> 
-    Kautsar, S. A., Duran, H. G. S., & Medema, M. H. (2018). <i>Genomic identification and analysis of specialized metabolite biosynthetic gene clusters in plants using PlantiSMASH.</i> In Plant Chemical Genomics (pp. 173-188). Humana Press, New York, NY.
     </a>
-  </div>
-  <div id="news" style="margin: 1em;">
-    <h4>News</h4>
-    Version 1.0.beta of plantiSMASH is live now!<br />
-    plantiSMASH is an extension of the widely used tool antiSMASH, now optimized for and made to work on plant genomes.
-    To top it off, these are the added features of plantiSMASH ver 1.0.beta:
-    <ul>
-      <li>Specific library of pHMM models and completely novel cluster calling logic designed to work on plant genomes</li>
-      <li>Specific plant clusterblast database from precalculated plant biosynthetic gene clusters</li>
-      <li>Specific training model for gene finding using glimmerHMM</li>
-      <li>Homology based metabolic modeling</li>
-      <li>Coexpression analysis and html-based visualization on detected biosynthetic gene clusters with the CoExpress module.</li>
-    </ul>
-    Besides these, all the usual great features found in antiSMASH are also available in plantiSMASH.
   </div>
   <div id="intro" style="margin: 1em;">
     <h4>Introduction</h4>
     <p>
-      Plants around the globe produce a wide variety of specialized metabolites that play key roles in communication and defense.
-      Recently, evidence has been accumulating that (like in microbes) the genes encoding the biosynthetic pathways towards these metabolites are often densely clustered in specific genomic loci: biosynthetic gene clusters (BGCs).
-      This offers great potential for genome-based discovery of plant natural products.
+      Anaerobic bacteria in the gut and they are responsible for the synthesis and transformation of diverse molecules involved in host-microbe and microbe-microbe interactions, that ultimately derive host phenotypes. The pathways encoding the production of these molecules belong to a specialized primary metabolism and are often physically clustered in the genome, in regions also known as metabolic gene clusters (MGCs)
     </p>
     <p>
-      Here, we introduce plantiSMASH, a versatile online analysis platform that automates the identification of candidate plant BGCs, as well as their comparative genomic and transcriptomic analysis.
-      The cluster detection logic, validated on a set of all plant BGCs that have been experimentally characterized thus far, is able to pinpoint many complex metabolic loci across the Plant Kingdom.
-      Additionally, interactively visualized coexpression analysis and comparative cluster-cluster alignment allow users to judge multiple sources of evidence for a candidate BGC to encode a group of enzymes that truly functions jointly in a biosynthetic pathway.
-      Furthermore, plantiSMASH finds coexpression correlations between candidate BGCs and genes elsewhere in the genome.
+      gutSMASH is a tool that has been developed to fulfill the need of systematically evaluate the metabolic potential of these bacteria by predicting both known and novel anaerobic MGCs from the gut microbiome.
+      The gutSMASH detection rules have been validated using a training set presented in our main publication
     </p>
     <p>
-      Altogether, this new software provides a comprehensive toolkit for plant geneticists to further explore the nature of gene clustering in plant metabolism.
-      Moreover, spurred by the continuing decrease in costs of plant genome sequencing and assembly, it will soon allow natural product chemists to apply genome mining technologies to the discovery of novel medicinal compounds from a wide range of plant species.
+      Altogether, this new software provides a comprehensive toolkit to functionally characterize anaerobic bacterial genomes by not only predicting MGCs of known functions but also novel MGCs that may represent good candidates for further experimental characterization.
     </p>
   </div>
   <div id="input" style="margin: 1em;">
-    <h4>plantiSMASH input parameters</h4>
+    <h4>gutSMASH input parameters</h4>
     <p>
-      The ideal input for plantiSMASH is an annotated nucleotide file in Genbank format or EMBL format.
-      You can either upload a GenBank/EMBL file manually, or simply enter the GenBank/RefSeq accession number of your sequence for plantiSMASH to upload it.
+      The ideal input for gutSMASH is an annotated nucleotide file in Genbank format or EMBL format.
+      You can either upload a GenBank/EMBL file manually, or simply enter the GenBank/RefSeq accession number of your sequence for gutSMASH to upload it.
       Alternatively, you can provide a FASTA file containing one or more sequences.
       If possible, you should also supply a separate GFF3-formatted file containing the annotation information for all said sequences.
-      If no annotation is available, we recommend running your sequence through an annotation pipeline like <a href='http://weatherby.genetics.utah.edu/MAKER/wiki/index.php/MAKER_Tutorial'>MAKER</a> (preferably with transcriptomic evidence) to obtain GBK/EMBL files with high-quality annotations.
-      Otherwise, plantiSMASH will generate a preliminary annotation using GlimmerHMM, and use that to run the rest of the analysis.
+      Otherwise, gutSMASH will generate a preliminary annotation using GlimmerHMM, and use that to run the rest of the analysis.
     </p>
     <p>
       Input files should be properly formatted.
@@ -59,28 +38,24 @@
       There are several optional analyses that may or may not be run on your sequence.
       Highly recommended is the ClusterBlast Comparative Analysis, which runs Diamond using each amino acid sequence from a detected gene cluster as a query on a large database of predicted protein sequences from secondary metabolite biosynthetic gene clusters, and pools the results to identify the gene clusters that are most homologous to the gene cluster that was detected in your query nucleotide sequence.
     </p>
-    <p>
-      Also available is the analysis of gene coexpression from transcriptomics data.
-      You can supply one or more additional file(s) either in <a href="https://www.ncbi.nlm.nih.gov/geo/info/soft.html">GEO compliant</a> *.soft format or in a simple CSV format (see <a href="#coex">CoExpress CSV file format</a>); plantiSMASH will then generate several powerful visualizations to help you see how genes interacts in terms of expression in a set conditions, both within and between clusters.
-    </p>
   </div>
   <div id="output" style="margin: 1em;">
-    <h4>plantiSMASH output</h4>
+    <h4>gutSMASH output</h4>
     <p>
-      The output of the plantiSMASH analysis pipeline is organized in an interactive HTML page with SVG graphics, and different parts of the analysis are displayed in different panels for every gene cluster (see <a href="http://plantismash.secondarymetabolites.org/precalc/results/Arabidopsis_thaliana">example output file on the Arabidopsis thaliana, or other species in our <a href="http://plantismash.secondarymetabolites.org/precalc/results/Arabidopsis_thaliana">precalculated results page</a>).
+      The output of the gutSMASH analysis pipeline is organized in an interactive HTML page with SVG graphics, and different parts of the analysis are displayed in different panels for every gene cluster.
     </p>
     <img src="{{ url_for('static', filename='images/image002.png') }}">
     <p>
       Initially, a list of identified clusters is displayed in the results page.
-      A gene cluster can be selected for viewing by clicking its number (gene clusters are numbered in the order in which they appear on the input nucleotide sequence) in the "Select Gene Cluster" panel just below the top banner or by clicking on the colored "Cluster XX" boxes.
+      A gene cluster can be selected for viewing by clicking its number (gene clusters are numbered in the order in which they appear on the input nucleotide sequence) in the "Overview" panel just below the top banner or by clicking on the "Region XX" boxes.
       A click on "Overview" brings you back to the overview list.
       <br />
-      Gene cluster buttons are color-coded by predicted secondary metabolite type.
+      Gene cluster buttons are color-coded by predicted hybrids or non-hyrbrids.
     </p>
     <img src="{{ url_for('static', filename='images/image004.png') }}">
     <p>
       In the upper panel, "Gene cluster description", information is given about each gene cluster that was detected.
-      In the upper line, the biosynthetic type and location of the gene cluster are displayed.
+      In the upper line the length and location of the gene cluster are displayed.
       Underneath this title line, all genes present in a detected gene cluster are outlined.
     </p>
     <p>
@@ -91,26 +66,10 @@
       Hovering over a gene with the mouse will prompt the gene name to be displayed above the gene.
       Clicking the gene will provide more information on the gene: its annotation, its sequence similarity with other genes in the cluster, its location, and cross-links specific to that gene.
     </p>
-    <img src="{{ url_for('static', filename='images/image006.png') }}">
-    <p>
-      If coexpression data was provided (through either a .soft or .csv file), this panel will show expression information through both a hierarchically clustered heatmap and a coexpression network (see below).
-    </p>
-    <img src="{{ url_for('static', filename='images/image008.png') }}">
-    <img src="{{ url_for('static', filename='images/image010.png') }}">
-    <img src="{{ url_for('static', filename='images/image012.png') }}">
-    <p>
       You can choose to show either expression fluctuation (the rate of which expression level of a gene changes between samples), color-coded from white to black; or expression intensity (expression level of a gene related to the sample value distribution), color coded from yellow to red.
-    </p>
-    <img src="{{ url_for('static', filename='images/image014.png') }}">
-    <p>
-      In the correlation network graph, you can see how genes within the cluster (box-shaped nodes) interact with each other, and with other genes in other clusters (ellipse-shaped nodes with solid edges and the corresponding cluster number inside) or anywhere else on the genome (ellipse-shaped nodes with dashed edges).
-    </p>
-    <img src="{{ url_for('static', filename='images/image016.png') }}">
-    <p>
-      Additionally, by enabling the coexpression analysis, you will also get a Hiveplot overview of significant cluster-cluster interactions detected in the selected transcriptomics dataset.
-      This can be accessed in the cluster overview screen.
-    </p>
-    <img src="{{ url_for('static', filename='images/image018.png') }}">
+    <img src="{{ url_for('static', filename='images/image006.png') }}">
+  
+    <img src="{{ url_for('static', filename='images/image008.png') }}">
     <p>
       If you enabled Gene Cluster Comparative Analysis (ClusterBlast), this panel will display the top ten plant gene clusters from precomputed data that are most similar to a detected gene cluster, visually aligned to it.
       The drop-down selection menu can be used to browse through the gene clusters.
@@ -119,42 +78,24 @@
     <img src="{{ url_for('static', filename='images/image020.png') }}">
     <p>
       In the upper right, a small list of buttons offers further functionality.
-      The house-shaped button will get you back to the <a href="http://plantismash.secondarymetabolites.org">plantiSMASH start page</a>.
+      The house-shaped button will get you back to the <a href="http://plantismash.secondarymetabolites.org">gutSMASH start page</a>.
       The question-mark button will get you to this help page.
-      The exclamation-mark button leads to a <a href="http://plantismash.secondarymetabolites.org/about.html">page explaining about plantiSMASH</a>.
+      The exclamation-mark button leads to a <a href="http://plantismash.secondarymetabolites.org/about.html">page explaining about gutSMASH</a>.
       The downward-pointing arrow will open a menu offering to download the complete set of results from the antiSMASH run, a summary Excel file and to the summary EMBL/GenBank output file.
       The EMBL/GenBank file can be viewed in a genome browser such as <a href="http://www.sanger.ac.uk/science/tools/artemis">Artemis</a>.
-    </p>
-  </div>
-  <div id="coex">
-    <h4>CoExpress CSV file format</h4>
-    <p>
-      This is an example of CSV format accepted by plantiSMASH-CoExpress:
-    </p>
-    <img src="{{ url_for('static', filename='images/image022.png') }}">
-    <p>
-      The first two lines containing #title and #desc should be self-explanatory.
-      These are then followed by the comma separated rows.
-      The first row would be the header, containing each sample / condition name.
-      The next rows are for the actual expression data, with the first column containing the locus tag directly matching to the supplied genome annotation, and the next columns containing expression values of the gene for each sample /condition.
-    </p>
-    <p>
-      The number of columns in each row should be identical.
-      In case of no expression data for a specific gene in a specific sample, simply put 0 or an empty character in the space between the commas.
-      Also, one important thing to note is that the expression values should be comparable across all samples, i.e. they are measured and normalized in the same way (log values, signal count data, etc).
     </p>
   </div>
   <div id="faq">
     <h4>Frequently Asked Questions</h4>
     <ol>
       <li>
-        <div class="question">Can I run plantiSMASH locally as a stand-alone program?</div>
+        <div class="question">Can I run gutSMASH locally as a stand-alone program?</div>
         Yes.
-        A stand-alone version of plantiSMASH is available from the <a href="http://plantismash.secondarymetabolites.org/download.html">download section of this website</a>.
-        PlantiSMASH natively run on python 2.7 under GNU/Linux, but will also run on other environment as well (OSX / Windows), given the dependency requirements are fulfilled.
+        A stand-alone version of gutSMASH is available from the <a href="http://plantismash.secondarymetabolites.org/download.html">download section of this website</a>.
+        GutSMASH natively run on python 3 under GNU/Linux, but will also run on other environment as well (OSX / Windows), given the dependency requirements are fulfilled.
       </li>
       <li>
-        <div class="question">Why doesn't plantiSMASH detect my gene cluster?</div>
+        <div class="question">Why doesn't gutSMASH detect my gene cluster?</div>
         Some gene clusters, such as fatty acid or cofactor biosynthesis gene
         clusters are not identified by antiSMASH, as they are categorized as <a
           href="http://en.wikipedia.org/wiki/Primary_metabolism" target="_blank">primary
@@ -165,12 +106,8 @@
         contact us, and we will add the models necessary to detect it.
       </li>
       <li>
-        <div class="question">Why are several genes upstream and downstream of gene clusters included, even though they do not seem to be part of the gene cluster?</div>
-        In designing plantiSMASH, we tried to be very conservative in cutting gene cluster borders, leaving this to the expert eye of the user, as it is better to show some extra genes than to leave out key genes.
-      </li>
-      <li>
         <div class="question">Can I also submit an unannotated genome sequence in FASTA format?</div>
-        Yes. We offer integrated preliminary gene prediction by GlimmerHMM based on a FASTA input. If you want the highest possible quality of results, we recommend you to use an annotation pipeline like MAKER (with transcriptomic evidence) first to obtain high-quality gene predictions in GBK or GFF format.
+        Yes. We offer integrated preliminary gene prediction by GlimmerHMM based on a FASTA input.
       </li>
       <li>
         <div class="question">What is the privacy policy of antiSMASH concerning my sequence data?</div>

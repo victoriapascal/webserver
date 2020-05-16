@@ -100,7 +100,7 @@ def new():
 
             _submit_job(redis_store, job)
             return redirect(url_for('.display', task_id=job.uid))
-    except Exception, e:
+    except Exception as e:
         error = unicode(e)
     return render_template('new.html', error=error,
                            old_email=old_email,
@@ -147,7 +147,7 @@ def contact():
             mail.send(confirmation_msg)
 
             return render_template('message_sent.html', message=message)
-    except Exception, e:
+    except Exception as e:
         error = unicode(e)
     return render_template('contact_form.html', error=error, email=email, message=message)
 

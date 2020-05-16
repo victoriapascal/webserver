@@ -11,7 +11,7 @@
 {% block body %}
 <div class="well well-small">
   Due to the limited server's resource, users can now only upload annotated fasta files (i.e. fasta + gff3).
-  Please first run your assembly on gene finding tools such as <a href="http://bioinf.uni-greifswald.de/augustus/">AUGUSTUS</a> before submitting it into plantiSMASH.
+  Please first run your assembly on gene finding tools such as <a href="http://bioinf.uni-greifswald.de/augustus/">AUGUSTUS</a> before submitting it into gutSMASH.
 </div>
 <ul class="nav nav-tabs">
   <li class="active"><a href="#nucl" data-toggle="tab">Nucleotide input</a></li>
@@ -20,7 +20,7 @@
 </ul>
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="nucl">
-    <div>Search plant genome sequence for secondary metabolite biosynthesis gene clusters:</div>
+    <div>Search anaerobic bacterial genome sequence for specialized primary metabolism:</div>
     <div>
       <button class="btn btn-inverse" id="btn-sample-input">Load sample input</button>
       <button class="btn btn-inverse" id="btn-sample-output">Open example output</button>
@@ -69,24 +69,7 @@
             <div class="col-md-5">
               <label for="clusterblast">
                 <input type="checkbox" name="clusterblast" id="clusterblast">
-                Compare to plantiSMASH predicted clusters</label>
-            </div>
-            <div class="col-md-6">
-              <label for="knownclusterblast">
-                <input type="checkbox" name="knownclusterblast" id="knownclusterblast">
-                Compare to registered known clusters from MIBiG Database</label>
-            </div>
-          </div>
-          <div id="coexpress-control" data-toggle="collapse" data-target=".coexpress" style="margin-top: 0.5em;">
-            <span class="glyphicon glyphicon-plus" id="coexpress-button"></span>
-            Gene expression analysis (CoExpress):
-          </div>
-          <div class="form-group collapse coexpress row">
-            <div class="col-md-5">
-              <input class="form-control" type="file" name="coexpress_file" id="coexpress_file">
-            </div>
-            <label class="col-md-6">Load a <a href="https://www.ncbi.nlm.nih.gov/geo/">Gene Expression Omnibus (GEO)</a> SOFT file or a <a href="./help.html#coexpress">properly formatted</a> CSV file</label>
-          </div>
+                Compare to gutSMASH predicted clusters</label>
         </fieldset>
         <fieldset class="as-form">
           <div style="margin-top: 0.5em;">
@@ -101,14 +84,6 @@
             <div class="form-group row">
               <div class="col-md-3">CD-HIT Cutoff</div>
               <div class="col-md-8">: <input type="text" name="cdh_cutoff" id="cdh_cutoff" size="2" value="0.5" style="text-align: right;"> (default: 0.5)</div>
-            </div>
-            <div class="form-group row">
-              <div class="col-md-3">Minimum unique domains</div>
-              <div class="col-md-8">: <input type="text" name="min_domain" id="min_domain" size="2" value="2" style="text-align: right;"> (default: 2)</div>
-            </div>
-            <div class="form-group row">
-              <div class="col-md-3">MAD Cutoff (CoExpress)</div>
-              <div class="col-md-8">: <input type="text" name="coexpress_mad" id="coexpress_mad" size="2" value="" style="text-align: right;"> (default: not set; only filter out genes with 0 MAD)</div>
             </div>
           </div>
         </fieldset>
