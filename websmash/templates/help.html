@@ -43,8 +43,9 @@
     <h4>gutSMASH output</h4>
     <p>
       The output of the gutSMASH analysis pipeline is organized in an interactive HTML page with SVG graphics, and different parts of the analysis are displayed in different panels for every gene cluster.
+
     </p>
-    <img src="{{ url_for('static', filename='images/image002.png') }}">
+    <img src="{{ url_for('static', filename='images/image002_sec3.png') }}">
     <p>
       Initially, a list of identified clusters is displayed in the results page.
       A gene cluster can be selected for viewing by clicking its number (gene clusters are numbered in the order in which they appear on the input nucleotide sequence) in the "Overview" panel just below the top banner or by clicking on the "Region XX" boxes.
@@ -52,7 +53,7 @@
       <br />
       Gene cluster buttons are color-coded by predicted hybrids or non-hyrbrids.
     </p>
-    <img src="{{ url_for('static', filename='images/image004.png') }}">
+    <img src="{{ url_for('static', filename='images/image004_sec4.png') }}">
     <p>
       In the upper panel, "Gene cluster description", information is given about each gene cluster that was detected.
       In the upper line the length and location of the gene cluster are displayed.
@@ -65,17 +66,17 @@
     <p>
       Hovering over a gene with the mouse will prompt the gene name to be displayed above the gene.
       Clicking the gene will provide more information on the gene: its annotation, its sequence similarity with other genes in the cluster, its location, and cross-links specific to that gene.
+    
     </p>
-      You can choose to show either expression fluctuation (the rate of which expression level of a gene changes between samples), color-coded from white to black; or expression intensity (expression level of a gene related to the sample value distribution), color coded from yellow to red.
-    <img src="{{ url_for('static', filename='images/image006.png') }}">
+    <img src="{{ url_for('static', filename='images/image006_sec4.png') }}">
   
-    <img src="{{ url_for('static', filename='images/image008.png') }}">
     <p>
       If you enabled Gene Cluster Comparative Analysis (ClusterBlast), this panel will display the top ten plant gene clusters from precomputed data that are most similar to a detected gene cluster, visually aligned to it.
       The drop-down selection menu can be used to browse through the gene clusters.
       Genes with the same colour are putative homologs based on significant Blast (Diamond) hits between them.
+    
+    <img src="{{ url_for('static', filename='images/image008_sec4.png') }}">
     </p>
-    <img src="{{ url_for('static', filename='images/image020.png') }}">
     <p>
       In the upper right, a small list of buttons offers further functionality.
       The house-shaped button will get you back to the <a href="http://plantismash.secondarymetabolites.org">gutSMASH start page</a>.
@@ -83,6 +84,10 @@
       The exclamation-mark button leads to a <a href="http://plantismash.secondarymetabolites.org/about.html">page explaining about gutSMASH</a>.
       The downward-pointing arrow will open a menu offering to download the complete set of results from the antiSMASH run, a summary Excel file and to the summary EMBL/GenBank output file.
       The EMBL/GenBank file can be viewed in a genome browser such as <a href="http://www.sanger.ac.uk/science/tools/artemis">Artemis</a>.
+    </p>
+      
+    <img src="{{ url_for('static', filename='images/image10_sec.png') }}">
+
     </p>
   </div>
   <div id="faq">

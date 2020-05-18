@@ -1103,7 +1103,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #409000;
+  color: #513edd;
   text-decoration: none;
 }
 a:hover,
@@ -1343,14 +1343,14 @@ mark,
   color: #777777;
 }
 .text-primary {
-  color: #409000;
+  color: #513edd;
 }
 a.text-primary:hover,
 a.text-primary:focus {
   color: #295d00;
 }
 .text-success {
-  color: #3c763d;
+  color: #190f2d;
 }
 a.text-success:hover,
 a.text-success:focus {
@@ -1379,14 +1379,14 @@ a.text-danger:focus {
 }
 .bg-primary {
   color: #fff;
-  background-color: #409000;
+  background-color: #513edd;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
   background-color: #295d00;
 }
 .bg-success {
-  background-color: #dff0d8;
+  background-color: #dadaef;
 }
 a.bg-success:hover,
 a.bg-success:focus {
@@ -2373,7 +2373,7 @@ table th[class*="col-"] {
 .table > thead > tr.success > th,
 .table > tbody > tr.success > th,
 .table > tfoot > tr.success > th {
-  background-color: #dff0d8;
+  background-color: #dadaef;
 }
 .table-hover > tbody > tr > td.success:hover,
 .table-hover > tbody > tr > th.success:hover,
@@ -2826,10 +2826,10 @@ select[multiple].input-lg {
 .has-success.checkbox label,
 .has-success.radio-inline label,
 .has-success.checkbox-inline label {
-  color: #3c763d;
+  color: #190f2d;
 }
 .has-success .form-control {
-  border-color: #3c763d;
+  border-color: #190f2d;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
@@ -2839,12 +2839,12 @@ select[multiple].input-lg {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
 }
 .has-success .input-group-addon {
-  color: #3c763d;
-  border-color: #3c763d;
-  background-color: #dff0d8;
+  color: #190f2d;
+  border-color: #190f2d;
+  background-color: #dadaef;
 }
 .has-success .form-control-feedback {
-  color: #3c763d;
+  color: #190f2d;
 }
 .has-warning .help-block,
 .has-warning .control-label,
@@ -3178,7 +3178,7 @@ fieldset[disabled] .btn-primary.focus {
 }
 .btn-success {
   color: #ffffff;
-  background-color: #5cb85c;
+  background-color: #7676c4;
   border-color: #4cae4c;
 }
 .btn-success:focus,
@@ -3226,11 +3226,11 @@ fieldset[disabled] .btn-success:focus,
 .btn-success.disabled.focus,
 .btn-success[disabled].focus,
 fieldset[disabled] .btn-success.focus {
-  background-color: #5cb85c;
+  background-color: #7676c4;
   border-color: #4cae4c;
 }
 .btn-success .badge {
-  color: #5cb85c;
+  color: #7676c4;
   background-color: #ffffff;
 }
 .btn-info {
@@ -3405,7 +3405,7 @@ fieldset[disabled] .btn-danger.focus {
   background-color: #ffffff;
 }
 .btn-link {
-  color: #409000;
+  color: #513edd;
   font-weight: normal;
   border-radius: 0;
 }
@@ -3576,7 +3576,7 @@ tbody.collapse.in {
   color: #ffffff;
   text-decoration: none;
   outline: 0;
-  background-color: #409000;
+  background-color: #513edd;
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
@@ -4010,7 +4010,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #409000;
+  border-color: #513edd;
 }
 .nav .nav-divider {
   height: 1px;
@@ -4103,7 +4103,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #409000;
+  background-color: #513edd;
 }
 .nav-stacked > li {
   float: none;
@@ -4730,7 +4730,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 6px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #409000;
+  color: #513edd;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   margin-left: -1px;
@@ -4763,8 +4763,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > span:focus {
   z-index: 3;
   color: #ffffff;
-  background-color: #409000;
-  border-color: #409000;
+  background-color: #513edd;
+  border-color: #513edd;
   cursor: default;
 }
 .pagination > .disabled > span,
@@ -4881,14 +4881,14 @@ a.label:focus {
   background-color: #5e5e5e;
 }
 .label-primary {
-  background-color: #409000;
+  background-color: #513edd;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
   background-color: #295d00;
 }
 .label-success {
-  background-color: #5cb85c;
+  background-color: #7676c4;
 }
 .label-success[href]:hover,
 .label-success[href]:focus {
@@ -4949,7 +4949,7 @@ a.badge:focus {
 }
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #409000;
+  color: #513edd;
   background-color: #ffffff;
 }
 .list-group-item > .badge {
@@ -5024,7 +5024,7 @@ a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #409000;
+  border-color: #513edd;
 }
 .thumbnail .caption {
   padding: 9px;
@@ -5062,9 +5062,9 @@ a.thumbnail.active {
   color: inherit;
 }
 .alert-success {
-  background-color: #dff0d8;
+  background-color: #dadaef;
   border-color: #d6e9c6;
-  color: #3c763d;
+  color: #190f2d;
 }
 .alert-success hr {
   border-top-color: #c9e2b3;
@@ -5146,7 +5146,7 @@ a.thumbnail.active {
   line-height: 20px;
   color: #ffffff;
   text-align: center;
-  background-color: #409000;
+  background-color: #513edd;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -5168,7 +5168,7 @@ a.thumbnail.active {
   animation: progress-bar-stripes 2s linear infinite;
 }
 .progress-bar-success {
-  background-color: #5cb85c;
+  background-color: #7676c4;
 }
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -5310,8 +5310,8 @@ button.list-group-item {
 .list-group-item.active:focus {
   z-index: 2;
   color: #ffffff;
-  background-color: #409000;
-  border-color: #409000;
+  background-color: #513edd;
+  border-color: #513edd;
 }
 .list-group-item.active .list-group-item-heading,
 .list-group-item.active:hover .list-group-item-heading,
@@ -5330,12 +5330,12 @@ button.list-group-item {
   color: #a5ff5d;
 }
 .list-group-item-success {
-  color: #3c763d;
-  background-color: #dff0d8;
+  color: #190f2d;
+  background-color: #dadaef;
 }
 a.list-group-item-success,
 button.list-group-item-success {
-  color: #3c763d;
+  color: #190f2d;
 }
 a.list-group-item-success .list-group-item-heading,
 button.list-group-item-success .list-group-item-heading {
@@ -5345,7 +5345,7 @@ a.list-group-item-success:hover,
 button.list-group-item-success:hover,
 a.list-group-item-success:focus,
 button.list-group-item-success:focus {
-  color: #3c763d;
+  color: #190f2d;
   background-color: #d0e9c6;
 }
 a.list-group-item-success.active,
@@ -5355,8 +5355,8 @@ button.list-group-item-success.active:hover,
 a.list-group-item-success.active:focus,
 button.list-group-item-success.active:focus {
   color: #fff;
-  background-color: #3c763d;
-  border-color: #3c763d;
+  background-color: #190f2d;
+  border-color: #190f2d;
 }
 .list-group-item-info {
   color: #31708f;
@@ -5707,37 +5707,37 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #dddddd;
 }
 .panel-primary {
-  border-color: #409000;
+  border-color: #513edd;
 }
 .panel-primary > .panel-heading {
   color: #ffffff;
-  background-color: #409000;
-  border-color: #409000;
+  background-color: #513edd;
+  border-color: #513edd;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #409000;
+  border-top-color: #513edd;
 }
 .panel-primary > .panel-heading .badge {
-  color: #409000;
+  color: #513edd;
   background-color: #ffffff;
 }
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #409000;
+  border-bottom-color: #513edd;
 }
 .panel-success {
   border-color: #d6e9c6;
 }
 .panel-success > .panel-heading {
-  color: #3c763d;
-  background-color: #dff0d8;
+  color: #190f2d;
+  background-color: #dadaef;
   border-color: #d6e9c6;
 }
 .panel-success > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #d6e9c6;
 }
 .panel-success > .panel-heading .badge {
-  color: #dff0d8;
-  background-color: #3c763d;
+  color: #dadaef;
+  background-color: #190f2d;
 }
 .panel-success > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #d6e9c6;

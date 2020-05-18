@@ -1,20 +1,20 @@
 {% extends 'layout.html' %}
 {% block body %}
-<h3>Download plantiSMASH standalone</h3>
+<h3>Download gutSMASH standalone</h3>
 <div class="well well-small">
-  Stand-alone versions of plantiSMASH are available through <b><a href="https://github.com/plantismash/plantismash">our GitHub page</a></b>.
+  Stand-alone versions of gutSMASH are available through <b><a href="https://github.com/victoriapascal/antismash/tree/gutsmash">our GitHub page</a></b>.
 </div>
 <div class="tabbable tabs-left">
   <div class="tab-content">
     <div class="tab-pane active">
-      <p>The current standalone release is plantiSMASH <strong>1.0</strong> (<em>December 12th, 2019</em>).</p>
+      <p>The current standalone release is gutSMASH <strong>1.0</strong> (<em>December 12th, 2019</em>).</p>
     </div>
 
     <div>
       <h4>Install from source</h4>
       <p>
-        First of all, download the plantiSMASH python source from our GitHub repo:<br />
-        <a href="https://github.com/plantismash/plantismash/releases">https://github.com/plantismash/plantismash/releases</a>
+        First of all, download the gutSMASH python source from our GitHub repo:<br />
+        <a href="https://github.com/plantismash/plantismash/releases">https://github.com/victoriapascal/antismash/tree/gutsmash</a>
       </p>
       <p>
         Then, make sure you have the following plantiSMASH dependencies installed:
@@ -31,10 +31,10 @@
             <li><a href="http://weizhongli-lab.org/cd-hit/download.php">CD-HIT</a> (version 4.6.6 tested)</li>
             <li><a href="http://tukaani.org/xz/">xz</a> development headers (version 5.1.1 tested)</li>
             <li><a href="http://xmlsoft.org">xml</a> development headers (version 2.9.1 tested)</li>
-            <li>python (version 2.7 tested, anything &gt;= python 2.6 should work)</li>
+            <li>python (version 3.7.6 tested, anything &gt;= python 3.0 should work)</li>
             <li>python-virtualenv (not needed, but highly recommended)</li>
         </ul>
-        <p>Then, create a python virtualenv for installing the plantiSMASH python dependencies. This is not required, but highly recommended.</p>
+        <p>Then, create a python virtualenv for installing the gutSMASH python dependencies. This is not required, but highly recommended.</p>
         <pre><code class="bash hljs">virtualenv as3<span class="hljs-built_in">source</span> as3/bin/activate</code></pre>
         <p>All the python dependencies are listed in <code>requirements.txt</code>, you can grab them all and install them with a simple command:</p>
         <pre><code class="bash hljs">pip install -r requirements.txt</code></pre>
@@ -46,7 +46,7 @@
       <h4>Scripts that can aid in using antiSMASH:</h4>
       <dl class="dl-horizontal">
         <dt><a href="https://bitbucket.org/antismash/antismash2/downloads/antiSMASH2_pHMM_seed_alignments.zip">pHMM seed alignments</a>
-        <dd>Seed alignments used for building pHMMs used in secondary metabolite cluster finding</dd>
+        <dd>Seed alignments used for building pHMMs used in primary metabolite cluster finding</dd>
         <dt><a href="https://bitbucket.org/antismash/antismash2/downloads/analysis_template.zip">analysis plug-in</a></dt>
         <dd>Template code for creating your own antismash 2.0 analysis plug-ins</dd>
         <dt><a href="https://bitbucket.org/antismash/antismash2/downloads/output_template.zip">output plug-in</a></dt>
